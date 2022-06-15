@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Cart from "../Pages/Cart";
 import Homepage from "../Pages/Homepage";
-import Products from "../Pages/Product";
+import Products from "../Pages/Products";
 import Product from "../Pages/Product";
 
 function AllRoutes() {
