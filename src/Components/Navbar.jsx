@@ -22,6 +22,7 @@ import {
 //   ChevronDownIcon,
 //   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -57,8 +58,8 @@ export default function WithSubnavigation() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
+          ><Link to="/"><Button>Logo</Button></Link>
+            
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
