@@ -10,7 +10,7 @@ import { useSearchParams } from "react-router-dom";
 import FilterComponent from "../Components/FilterComponent";
 // import { store } from "../Redux/store";
 import { fetchData } from "../Redux/products/action"
-import axios from "axios"
+// import axios from "axios"
 
 const Products = () => {
     // console.log("double")
@@ -28,12 +28,13 @@ const Products = () => {
   },[dispatch,products?.length,searchParams])
   // console.log(products)
   
-axios.get("http://188.166.98.109:5000/num").then((r)=>console.log(r.data[0].products)).catch((e)=>console.log(e))
+  // axios.get("http://188.166.98.109:5000/num").then((r) => console.log(r.data[0].products)).
+  //   catch((e) => console.log(e))
 
   return (
     <Box>
       <Stack display={{ md: 'flex' }} flexDirection={{md:"row"} }>
-      <Box>
+      <Box minWidth={'10rem'}>
         <FilterComponent />
         </Box>
         <Box>
@@ -41,7 +42,7 @@ axios.get("http://188.166.98.109:5000/num").then((r)=>console.log(r.data[0].prod
           <Flex flexWrap="wrap" justifyContent="space-around">
             {products.map(product => 
             {
-              return <ProductSimple key={product.key} image={product.image} title={product.title} price={product.price}/>
+              return <ProductSimple key={product.id} image={product.image} title={product.title} price={product.price}/>
             }
             )
             }
